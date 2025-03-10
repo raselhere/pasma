@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+
+    <!-- Font Link -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <style>
+  .logo{
+  width:50px;
+  height:50px;
+  color:black;
+  margin-top:0;
+  margin-left:2;
+  }
+  .myimg{
+  width:50px;
+  height:50px;
+  border: 2px solid black;
+  border-radius: 25px
+  }
+  </style>
+
+ <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #7E94BF;
+            color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 50px 0;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, #ffffff, #e0e0e0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent; /* Fallback */
+        }
+        .header p {
+            font-size: 1.2rem;
+            color: #ccc;
+        }
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 40px;
+            gap: 20px; /* Spacing between boxes */
+        }
+        .info-box, .form-box {
+            background: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            flex: 1; /* Each box will take up equal space */
+            max-width: 48%; /* Ensure they stay side by side */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .info-box:hover, .form-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.7);
+        }
+        .info-box h3, .form-box h3 {
+            font-size: 1.8rem;
+            color: #f5f5f5;
+            margin-bottom: 15px;
+        }
+        .info-box p {
+            font-size: 1rem;
+            color: #ccc;
+            margin: 10px 0;
+        }
+        .info-box i {
+            color: #f5f5f5;
+            margin-right: 10px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input, textarea {
+            margin: 10px 0;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            background: #444;
+            color: #f5f5f5;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border: 2px solid #555;
+        }
+        button {
+            background: linear-gradient(90deg, #4CAF50, #66BB6A);
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: linear-gradient(90deg, #45A049, #4CAF50);
+        }
+        @media (max-width: 768px) {
+            .info-box, .form-box {
+                flex: 1 1 100%; /* Each box takes full width on smaller screens */
+                max-width: 100%;
+            }
+        }
+
+         .map-container {
+        margin-top: 40px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        width: 100%;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media (max-width: 768px) {
+        .map-container {
+            height: 300px;
+        }
+    }
+      .navbar-custom {
+    background-color: #5DADE2 !important; /* Light Blue */
+  }
+
+    </style>
+</head>
+<body>
+
+<!--  Navigation bar-->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+  <div class="container-fluid">
+    <div class="logo">
+      <img class="myimg" src="{{url_for('static',filename='img.png')}}" alt="">
+    </div>
+    <a class="navbar-brand" href="#">PASMA</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('about') }}">About</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ url_for('contact') }}">Contact</a>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+    <div class="container">
+        <div class="header">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you! Feel free to reach out for any inquiries.</p>
+        </div>
+        <div class="contact-info">
+            <!-- Contact Info Section -->
+            <div class="info-box">
+                <h3>Get In Touch</h3>
+                <p><i class="fas fa-map-marker-alt"></i>Plot #15, Block-B, Bashundhara R/A, Dhaka 1229, Bangladesh</p>
+                <p><i class="fas fa-phone"></i>+8801796351793</p>
+                <p><i class="fas fa-envelope"></i><a href="mailto:contact@devteam.com" style="color: #f5f5f5; text-decoration: none;">zrr@devteam.com</a></p>
+                <p><i class="fas fa-globe"></i><a href="https://www.devteam.com" target="_blank" style="color: #f5f5f5; text-decoration: none;">www.zrr.com</a></p>
+            </div>
+            <!-- Form Section -->
+            <div class="form-box">
+                <h3>Send Us a Message</h3>
+                <form action="#" method="post">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.0980920526376!2d90.42298167500397!3d23.815110678626276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c64c103a8093%3A0xd660a4f50365294a!2sNorth%20South%20University!5e0!3m2!1sen!2sbd!4v1738111597349!5m2!1sen!2sbd"
+    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+</body>
+</html>
